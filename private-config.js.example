@@ -1,0 +1,7 @@
+module.exports = {
+  name: 'Express Demo',
+  port: '4343',
+  publicPath: '',
+  dev: {},
+  proxyUrl: 'http://127.0.0.1:8080'// 转发的服务器地址
+}

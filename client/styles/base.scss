@@ -1,0 +1,191 @@
+/* 
+ ************************************* 变量 *******************************************
+ */
+  // 组件、布局的宽高
+  $content_w: 1190px;
+  $header_h: 64px;
+  $footer_h: 579px;
+
+  // color
+  $c-primary: #4285f4;
+  $c-title: #333333;
+  $c-subtitle: #666666;
+  $c-desc: #999999;
+  $c-price: #f99c00;
+  $c-prompt: #FF3333;
+  $c-border: #dddddd;
+  $c-footerBg: #2D3237;
+
+  // font-family
+  $f-medium: PingFang-SC-Medium;
+  // $f-medium: PingFang-SC-Seibold;
+
+  // mixins
+  @mixin f-backgroundCover($imgUrl) {
+    background-image: url($imgUrl);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  @mixin f-backgroundContain($imgUrl) {
+    background-image: url($imgUrl);
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+/* 
+ *************************************  原子类 *******************************************
+ */
+  // 定义一个变量，防止每个单页面文件都重复引入
+  @mixin f-clearfix() {
+    &::after {
+      content: '';
+      clear: both;
+      display: block;
+      height: 0;
+      font-size: 0;
+    }
+  }
+  @mixin f-flex() {
+    display: flex;
+  }
+  @mixin f-levelCenter() {
+    display: flex;
+    justify-content: center;
+  }
+  @mixin f-verticalCenter() {
+    display: flex;
+    align-items: center;
+  }
+  @mixin f-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @mixin f-flexWrap() {
+    flex-wrap: wrap;
+  }
+  @mixin f-flex-jc-sb() {
+    justify-content: space-between;
+  }
+  @mixin f-flex-jc-sa() {
+    justify-content: space-around;
+  }
+  @mixin f-flex-ac-center() {
+    align-content: center;
+  }
+  @mixin f-flex-ai-start() {
+    align-items: flex-start;
+  }
+  @mixin f-flex-ai-end() {
+    align-items: flex-end;
+  }
+  @mixin f-flexOne() {
+    flex: 1;
+  }
+
+  // 固定
+  @mixin f-fixed() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // 防止抖动
+    -webkit-transform: translateZ(0);
+  }
+
+  // 单行文字隐藏
+  @mixin f-txtHide() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // 绝对定义居中
+  @mixin f-absoluteCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @mixin f-absoluteVerticalCenter() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @mixin f-absoluteColumnCenter() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+/* 
+ ************************************* 组件类 *******************************************
+ */
+  @mixin u-container() {
+    width: 100%;
+    &_wrap {
+      width: $content_w;
+      margin: 0 auto;
+    }
+  }
+
+  @mixin u-btn($w: 120px, $h: 40px, $cT: $c-primary, $cBg: #fff, $cb: $c-primary) {
+    width: $w;
+    height: $h;
+    @include f-center();
+    background: $cBg;
+    color: $cT;
+    border: 1px solid $cb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover {
+      color: $cBg;
+      background: $cT;
+    }
+    &.primary {
+      color: $cBg;
+      background: $cT;
+      &:hover {
+        background: $cBg;
+        color: $cT;
+      }
+    }
+  }
+  // 登录 注册 忘记密码 页面输入框 prefix icon 样式
+  @mixin u-icon($imgUrl, $w: 16px, $h: 16px) {
+    width: $w;
+    height: $h;
+    margin-top: 12px;
+    margin-left: 6px;
+    @include f-backgroundContain($imgUrl);
+  }
+  // 登录 注册 忘记密码 页面输入框 suffix icon 样式
+  @mixin u-icon-hover($imgUrl, $w: 16px, $h: 16px) {
+    width: $w;
+    height: $h;
+    margin-top: 12px;
+    margin-right: 6px;
+    @include f-backgroundContain($imgUrl);
+    cursor: pointer;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  // 登录 注册 忘记密码 页面公共 a标签样式
+  @mixin u-login-a() {
+    color: #4285F4;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+    &:visited {
+      color: #4285F4;
+    }
+  }
+

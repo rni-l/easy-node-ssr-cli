@@ -1,0 +1,15 @@
+doctype html
+
+html
+  head
+    title #{title}
+    //- link(rel='stylesheet', href='./assets/font/iconfont.css')
+    //- link(rel='stylesheet', href='./styles/reset.css')
+    link(rel='stylesheet', href='./dist/styles/common.css')
+    block headerStatic
+    link(rel="shortcut icon" href="./favicon.ico")
+  body
+    #app
+      //- u-common-styles
+      block content
+    block footerStatic

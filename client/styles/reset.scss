@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/* 
+  *************************************  样式重置 *******************************************
+  */
+html, body {
+  font-family: PingFangSC-Regular,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  height: 100%;
+}
+body {
+  font-size: 14px;
+  /* 优化字体渲染 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+#app {
+  min-height: 100%;
+  padding-bottom: 579px;
+  box-sizing: border-box;
+  position: relative;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:-webkit-any-link {
+  color: inherit;
+}
+img, input, button, textarea, select, option {
+  border: none;
+  background: transparent;
+}
+input, button {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+textarea {
+  resize: none;
+}
+// h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, a, input, select, button, option, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/*取消部分浏览器`input[type='number']`的默认样式*/
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.f-clearfix {
+  @include f-clearfix;
+}
+.f-flex {
+  @include f-flex;
+}
+.f-levelCenter {
+  @include f-levelCenter;
+}
+.f-verticalCenter {
+  @include f-verticalCenter;
+}
+.f-center {
+  @include f-center;
+}
+.f-flexWrap {
+  @include f-flexWrap;
+}
+.f-flex-jc-sb {
+  @include f-flex-jc-sb;
+}
+.f-flex-jc-sa {
+  @include f-flex-jc-sa;
+}
+.f-flex-ac-center {
+  @include f-flex-ac-center;
+}
+.f-flex-ai-start {
+  @include f-flex-ai-start;
+}
+.f-flex-ai-end {
+  @include f-flex-ai-end;
+}
+.f-flexOne {
+  @include f-flexOne;
+}
+.f-fixed {
+  @include f-fixed;
+}
+.f-txtHide {
+  @include f-txtHide;
+}
+
+.u-container {
+  @include u-container;
+}
+
+.u-btn {
+  @include u-btn;
+}
