@@ -5,9 +5,7 @@ const userController = require(global.__basepath__ + 'app/controllers/home/index
 
 // pages
 router.get(HOME.path, (req, res) => {
-  userController.toHome(res, {
-    renderSuccessfullyPath: HOME.renderFile
-  })
+  userController.toHome(req, res, HOME.renderFile)
 })
 
 module.exports = router

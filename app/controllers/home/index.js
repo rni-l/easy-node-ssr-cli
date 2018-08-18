@@ -6,14 +6,14 @@ class HomeController extends Controller {
     super()
   }
 
-  async toHome(response, { renderSuccessfullyPath }) {
+  async toHome(req, res, successPath) {
     const { code, data } = await api_getGoods()
     if (code === 200) {
       console.log('get goods:', data)
-      response.render(renderSuccessfullyPath, data)
+      res.render(successPath, data)
     } else {
-      console.log('fail', data, renderSuccessfullyPath)
-      response.render(renderSuccessfullyPath)
+      console.log('fail', data, successPath)
+      res.render(successPath)
     }
   }
 }

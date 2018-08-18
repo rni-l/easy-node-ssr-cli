@@ -9,7 +9,7 @@
     "start": "npm run build && npm run devProduct",
     "dev": "npm run clear && cross-env NODE_ENV=development node app.js",
     "build": "npm run clear && cross-env NODE_ENV=production webpack --config ./webpack-config/webpack.prod.config.js && npm run gulpBuild",
-    "devProduct": "cross-env NODE_ENV=production ./node_modules/.bin/nodemon app.js ",
+    "devProduct": "npm run build && cross-env NODE_ENV=production ./node_modules/.bin/nodemon app.js ",
     "product": "cross-env NODE_ENV=production pm2 start app.js -n kuaihaigou-pc",
     "stop": "pm2 stop test",
     "delete": "pm2 delete test"
@@ -85,6 +85,7 @@
     "axios": "^0.18.0",
     "easy-eventbus": "^0.1.1",
     "element-ui": "^2.4.4",
+    "es6-promise": "^4.2.4",
     "express": "^4.15.4",
     "jquery": "^3.3.1",
     "jr-qrcode": "^1.1.1",
